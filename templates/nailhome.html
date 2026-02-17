@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nail Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-brand">
+            <h2>NAIL DISEASE PREDICTION</h2>
+        </div>
+        <div class="navbar-links">
+            <a href="/">HOME</a>
+            <a href="/about">ABOUT</a>
+            <a href="#" style="margin-left: 10px;"><i class="fas fa-search"></i></a>
+        </div>
+    </div>
+</nav>
+
+<!-- CONTENT SECTION -->
+<section class="section">
+    <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+        <h2 class="section-title">OUR PROJECT ON NAIL DISEASE</h2>
+        <p style="font-size: 1.1rem; color: var(--text-light); margin-bottom: 50px; line-height: 1.8;">
+            Human nail can be used for the prediction of various systemic and dermatological diseases. The proposed system - Nail Image Processing System helps us in the analysis of human nail and thereby help us in predicting various nail diseases. The input to the proposed system is the Human Palm Image. The nail portion is segmented and nail color space is extracted and taken together to form a feature vector and then analysis of nail is done, which is useful for the diagnosis of various nail diseases is proposed system will help the doctors in the early diagnosis of diseases.
+        </p>
+        <a href="/nailpred" class="btn btn-primary" style="font-size: 1.1rem; padding: 16px 50px;">Predict</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Reach at..</h3>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Location</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>Call +91 1234567890</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>demo@gmail.com</span>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h3>About</h3>
+            <p>Health systems are under greater pressure than ever, but along with its other uses, the potential of AI to provide much-needed relief is well documented.</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Links</h3>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/nailhome">Nail</a>
+        </div>
+
+        <div class="footer-section">
+            <h3>Newsletter</h3>
+            <p>Subscribe to our newsletter for updates</p>
+            <div class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Enter email">
+                <button class="newsletter-btn">Subscribe</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2025 Nail Disease Detection. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

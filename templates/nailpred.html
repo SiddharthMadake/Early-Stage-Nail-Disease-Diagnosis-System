@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nail Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-brand">
+            <h2>NAIL DISEASE PREDICTION</h2>
+        </div>
+        <div class="navbar-links">
+            <a href="/">HOME</a>
+            <a href="/about">ABOUT</a>
+            <a href="/nailhome">NAIL</a>
+        </div>
+    </div>
+</nav>
+
+<section class="section">
+    <div class="prediction-container">
+        <h2 style="text-align: center; margin-bottom: 30px;">Upload or Capture Nail Image</h2>
+
+        <form action="/nailresult" method="post" enctype="multipart/form-data">
+
+            <!-- Upload Section -->
+            <div class="upload-area">
+                <label for="imageInput" class="file-label">
+                    <i class="fas fa-folder-open"></i> Browse Files
+                </label>
+                <input type="file" name="image" id="imageInput" accept="image/*">
+            </div>
+
+            <hr style="margin:30px 0;">
+
+            <!-- Live Camera Section -->
+            <h3 style="text-align:center; margin-bottom:20px;">OR Capture Live Image</h3>
+
+            <div style="text-align:center;">
+                <video id="video" width="350" height="250" autoplay 
+                       style="border-radius:10px; box-shadow: var(--shadow-md);"></video>
+                <br><br>
+                <button type="button" class="btn" onclick="captureImage()">Capture</button>
+                <canvas id="canvas" width="350" height="250" style="display:none;"></canvas>
+            </div>
+
+            <input type="hidden" name="captured_image" id="capturedImage">
+
+            <br><br>
+
+            <button class="btn btn-primary" type="submit" style="width:100%;">
+                Analyze Image
+            </button>
+        </form>
+
+        {% if prediction %}
+        <div class="result-container">
+            <h2>Prediction Result</h2>
+            <h3>{{ prediction }}</h3>
+            <p>Confidence: {{ confidence }}%</p>
+        </div>
+        {% endif %}
+
+    </div>
+</section>
+
+<script>
+    const video = document.getElementById('video');
+
+    // Access camera
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function(stream) {
+                video.srcObject = stream;
+                video.play();
+            })
+            .catch(function(error) {
+                alert("Camera access denied or not available.");
+            });
+    }
+
+    function captureImage() {
+        const canvas = document.getElementById('canvas');
+        const context = canvas.getContext('2d');
+
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+        let imageData = canvas.toDataURL("image/png");
+        document.getElementById("capturedImage").value = imageData;
+
+        alert("Image Captured Successfully!");
+    }
+</script>
+
+</body>
+</html>

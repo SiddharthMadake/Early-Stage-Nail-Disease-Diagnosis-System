@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nail Disease Detection - AI Powered Diagnosis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-brand">
+            <h2>NAIL DISEASE DETECTION</h2>
+        </div>
+        <div class="navbar-links">
+            <a href="/">HOME</a>
+            <a href="/about">ABOUT</a>
+            <a href="/nailhome">NAIL</a>
+            <a href="#" style="margin-left: 10px;"><i class="fas fa-search"></i></a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1>AI Based Nail Disease Detection</h1>
+            <p>Transfer learning models like VGG16, ResNet50, InceptionV3 and Xception are used for detecting nail diseases with high accuracy and efficiency.</p>
+            <a href="/nailhome" class="btn">Explore</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop" alt="Medical Professional">
+        </div>
+    </div>
+</section>
+
+<!-- MODELS SECTION -->
+<section class="section">
+    <h2 class="section-title">MODELS EMPLOYED FOR THE PROJECT</h2>
+    <p class="section-subtitle">Transfer Learning Models</p>
+    
+    <div class="models-grid">
+        <div class="model-card">
+            <div class="model-icon">V</div>
+            <h3>VGG16</h3>
+            <p>VGG-16 is a convolutional neural network that is 16 layers deep. The pretrained network can classify images into 1000 object categories, such as keyboard, mouse, pencil, and many animals.</p>
+        </div>
+
+        <div class="model-card">
+            <div class="model-icon">R</div>
+            <h3>RESNET50</h3>
+            <p>ResNet-50 is a convolutional neural network that is 50 layers deep. The pretrained network can classify images into 1000 object categories, such as keyboard, mouse, pencil, and many animals.</p>
+        </div>
+
+        <div class="model-card">
+            <div class="model-icon">I</div>
+            <h3>INCEPTIONV3</h3>
+            <p>InceptionV3 is a convolutional neural network for assisting in image analysis and object detection. The pretrained network can classify images into 1000 object categories, such as keyboard, mouse, pencil, and many animals.</p>
+        </div>
+
+        <div class="model-card">
+            <div class="model-icon">X</div>
+            <h3>XCEPTION</h3>
+            <p>Xception is a convolutional neural network that is 71 layers deep. The pretrained network can classify images into 1000 object categories, such as keyboard, mouse, pencil, and many animals.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Reach at..</h3>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Location</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>Call +91 8080538973</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>siddharthmadake9@gmail.com</span>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/siddharth-madake-6a03002b8"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h3>About</h3>
+            <p>Health systems are under greater pressure than ever, but along with its other uses, the potential of AI to provide much-needed relief is well documented.</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Links</h3>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/nailhome">Nail</a>
+        </div>
+
+        <div class="footer-section">
+            <h3>Newsletter</h3>
+            <p>Subscribe to our newsletter for updates</p>
+            <div class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Enter email">
+                <button class="newsletter-btn">Subscribe</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2026 Nail Disease Detection. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // Animate cards on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.model-card').forEach(card => {
+        observer.observe(card);
+    });
+</script>
+
+</body>
+</html>
