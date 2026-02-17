@@ -34,7 +34,7 @@ An AI-powered web application for detecting nail diseases using deep learning mo
 ```
 nail-disease-detection/
 ├── templates/
-│   ├── index.html          # Home page with hero section
+│   ├── index.html          # Home page 
 │   ├── about.html          # About page
 │   ├── nailhome.html       # Nail prediction info page
 │   └── nailpred.html       # Upload and prediction page
@@ -43,14 +43,14 @@ nail-disease-detection/
 ├── uploads/                # Temporary upload folder (auto-created)
 ├── main.py                 # Flask application
 ├── requirements.txt        # Python dependencies
-├── vgg-16-nail-disease.h5  # Trained model (add this)
+├── vgg-16-nail-disease.h5  # Trained model (add this) 
 └── README.md              # This file
 ```
 
 ## Installation
 
 ### Prerequisites
-- Python 3.8 or higher
+- Python 3.9 or higher
 - pip package manager
 ## 📥 Model & Dataset
 Download model: https://drive.google.com/file/d/1Vs7AgzN4mJfBYfLYhNXF7AAROq9SPCz1/view?usp=sharing
@@ -170,10 +170,5 @@ Edit the `DISEASE_CLASSES` list in `main.py` to match your model's output classe
 
 This project is for educational purposes.
 
-## Contact
-
-For questions or support, refer to the contact information in the footer of the website.
-
----
 
 **Note**: This is a diagnostic assistance tool and should not replace professional medical advice. Always consult with healthcare professionals for proper diagnosis and treatment.
