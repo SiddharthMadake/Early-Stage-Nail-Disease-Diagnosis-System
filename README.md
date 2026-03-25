@@ -2,6 +2,18 @@
 
 An AI-powered web application for detecting nail diseases using deep learning models (VGG16, ResNet50, InceptionV3, Xception).
 
+## 🎥 Live Demo
+
+<p align="center">
+  <a href="https://drive.google.com/file/d/1wmWqFLKBRK4SLmwyQg8PqSqK6KlX5O6t/view?usp=drive_link">
+    <img src="https://img.icons8.com/color/480/video.png" width="120"/>
+  </a>
+</p>
+
+<p align="center">
+  <b>Click the icon above to watch the full demo</b>
+</p>
+
 ## Features
 
 -  Detects 17 different types of nail diseases
