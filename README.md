@@ -2,6 +2,7 @@
 
 An AI-powered web application for detecting nail diseases using deep learning models (VGG16, ResNet50, InceptionV3, Xception).
 
+
 ## 🎥 Live Demo
 
 <p align="center">
@@ -109,22 +110,24 @@ python main.py
 ## Key Improvements
 
 ### Backend (main.py)
-✅ Fixed preprocessing to use VGG16 instead of InceptionV3
-✅ Added comprehensive error handling
-✅ Added confidence score to predictions
-✅ Better file handling and cleanup
-✅ Formatted disease names for better readability
+
+- ✅ Fixed preprocessing to use VGG16 instead of InceptionV3
+- ✅ Added comprehensive error handling
+- ✅ Added confidence score to predictions
+- ✅ Better file handling and cleanup
+- ✅ Formatted disease names for better readability
 
 ### Frontend
-✅ Modern, responsive design with Poppins & Playfair Display fonts
-✅ Professional medical color scheme (teal/green)
-✅ Hero section with gradient background
-✅ Model cards with hover effects
-✅ Enhanced footer with newsletter and social links
-✅ Drag-and-drop file upload
-✅ Image preview before prediction
-✅ Smooth animations and transitions
-✅ Mobile-responsive layout
+
+- ✅ Modern, responsive design with Poppins & Playfair Display fonts
+- ✅ Professional medical color scheme (teal/green)
+- ✅ Hero section with gradient background
+- ✅ Model cards with hover effects
+- ✅ Enhanced footer with newsletter and social links
+- ✅ Drag-and-drop file upload
+- ✅ Image preview before prediction
+- ✅ Smooth animations and transitions
+- ✅ Mobile-responsive layout
 
 ## Technologies Used
 
