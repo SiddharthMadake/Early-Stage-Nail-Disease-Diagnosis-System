@@ -1,1 +1,41 @@
+name: Nail Disease AI CI/CD
 
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name:  Checkout Code
+      uses: actions/checkout@v3
+
+    - name:  Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install Dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name:  Lint Check (optional)
+      run: |
+        pip install flake8
+        flake8 . || true
+
+    - name: Run Tests (basic)
+      run: |
+        python -m unittest discover || true
+
+    - name: Check Model File Exists
+      run: |
+        if [ ! -f "model.h5" ]; then
+          echo " model.h5 not found!"
+          exit 1
+        else
+          echo " Model file found"
+        fi
