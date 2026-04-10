@@ -4,36 +4,37 @@ on:
   push:
     branches: ["main"]
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v4
 
-    - name: Setup Python
-      uses: actions/setup-python@v5
+    - uses: actions/setup-python@v5
       with:
         python-version: "3.9"
 
-    - name: Install Dependencies
-      run: |
-        pip install --upgrade pip
-        pip install -r requirements.txt
+    - run: pip install -r requirements.txt
 
     - name: Download Model
       run: |
         pip install gdown
-        gdown https://drive.google.com/uc?id=1Vs7AgzN4mJfBYfLYhNXF7AAROq9SPCz1
+        gdown --fuzzy https://drive.google.com/file/d/1Vs7AgzN4mJfBYfLYhNXF7AAROq9SPCz1/view
 
     - name: Check Files
-      run: ls -l   
+      run: ls -l
 
     - name: Rename Model
       run: |
-        FILE=$(ls *.h5 | head -n 1)
+        FILE=$(ls *.h5 2>/dev/null | head -n 1)
+        if [ -z "$FILE" ]; then
+          echo "Model file not found ❌"
+          exit 1
+        fi
         mv "$FILE" vgg-16-nail-disease.h5
 
-    - name: Done
-      run: echo "CI Passed ✅"
+    - run: echo "CI Passed ✅"
