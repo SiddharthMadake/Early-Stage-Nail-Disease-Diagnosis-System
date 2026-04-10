@@ -23,18 +23,9 @@ jobs:
     - name: Download Model
       run: |
         pip install gdown
-        gdown --fuzzy https://drive.google.com/file/d/1Vs7AgzN4mJfBYfLYhNXF7AAROq9SPCz1/view
+        gdown --fuzzy "https://drive.google.com/file/d/1Vs7AgzN4mJfBYfLYhNXF7AAROq9SPCz1/view" -O vgg-16-nail-disease.h5
 
     - name: Check Files
       run: ls -l
 
-    - name: Rename Model
-      run: |
-        FILE=$(ls *.h5 2>/dev/null | head -n 1)
-        if [ -z "$FILE" ]; then
-          echo "Model file not found ❌"
-          exit 1
-        fi
-        mv "$FILE" vgg-16-nail-disease.h5
-
-    - run: echo "CI Passed ✅"
+    - run: echo "CI Passed "
